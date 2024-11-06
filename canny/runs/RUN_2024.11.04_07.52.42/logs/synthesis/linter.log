@@ -1,0 +1,228 @@
+%Warning-WIDTHEXPAND: /openlane/designs/canny/src/g1.v:58:22: Operator ADD expects 12 bits on the LHS, but LHS's VARREF 'R0' generates 10 bits.
+                                                            : ... note: In instance 'canny_edge.gauss_1'
+   58 |             t2 <= R0 + (R1<<1);
+      |                      ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.018
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /openlane/designs/canny/src/g1.v:58:27: Operator SHIFTL expects 12 bits on the LHS, but LHS's VARREF 'R1' generates 10 bits.
+                                                            : ... note: In instance 'canny_edge.gauss_1'
+   58 |             t2 <= R0 + (R1<<1);
+      |                           ^~
+%Warning-WIDTHEXPAND: /openlane/designs/canny/src/g1.v:59:16: Operator ASSIGNDLY expects 12 bits on the Assign RHS, but Assign RHS's VARREF 'R2' generates 10 bits.
+                                                            : ... note: In instance 'canny_edge.gauss_1'
+   59 |             t1 <= R2;
+      |                ^~
+%Warning-WIDTHTRUNC: /openlane/designs/canny/src/g1.v:65:22: Operator ASSIGNDLY expects 8 bits on the Assign RHS, but Assign RHS's SHIFTR generates 12 bits.
+                                                           : ... note: In instance 'canny_edge.gauss_1'
+   65 |             out_data <= (t3 + t4)>>4;
+      |                      ^~
+%Warning-UNUSEDSIGNAL: /openlane/designs/canny/src/nmh1.v:24:11: Signal is not used: 'rst'
+                                                               : ... note: In instance 'canny_edge.nmh_1'
+   24 |     input rst,
+      |           ^~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/canny/src/s1.v:62:25: Signal is not used: 'R2'
+                                                             : ... note: In instance 'canny_edge.sobel_1.x1'
+   62 |     input signed [19:0] R2,
+      |                         ^~
+%Warning-UNUSEDSIGNAL: /openlane/designs/canny/src/s1.v:132:44: Signal is not used: 'tt'
+                                                              : ... note: In instance 'canny_edge.sobel_1.y1'
+  132 |     reg signed [19:0] t1,t2,t3,t4,t5,t6,t7,tt;
+      |                                            ^~
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_g1.v:49:19: Blocking assignment '=' in sequential logic process
+                                                          : ... Suggest using delayed assignment '<='
+   49 |             Shift1[i] = 8'd0;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_g1.v:50:19: Blocking assignment '=' in sequential logic process
+                                                          : ... Suggest using delayed assignment '<='
+   50 |             Shift2[i] = 8'd0;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_g1.v:65:23: Blocking assignment '=' in sequential logic process
+                                                          : ... Suggest using delayed assignment '<='
+   65 |                 Shift1[i] = Shift1[i - 1];
+      |                       ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_g1.v:66:23: Blocking assignment '=' in sequential logic process
+                                                          : ... Suggest using delayed assignment '<='
+   66 |                 Shift2[i] = Shift2[i - 1];
+      |                       ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_s1.v:60:19: Blocking assignment '=' in sequential logic process
+                                                          : ... Suggest using delayed assignment '<='
+   60 |             Shift1[i] = 8'd0;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_s1.v:63:19: Blocking assignment '=' in sequential logic process
+                                                          : ... Suggest using delayed assignment '<='
+   63 |             Shift2[i] = 8'd0;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_s1.v:66:19: Blocking assignment '=' in sequential logic process
+                                                          : ... Suggest using delayed assignment '<='
+   66 |             Shift3[i] = 8'd0;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_s1.v:69:19: Blocking assignment '=' in sequential logic process
+                                                          : ... Suggest using delayed assignment '<='
+   69 |             Shift4[i] = 8'd0;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_s1.v:78:23: Blocking assignment '=' in sequential logic process
+                                                          : ... Suggest using delayed assignment '<='
+   78 |                 Shift1[i] = Shift1[i - 1];
+      |                       ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_s1.v:84:23: Blocking assignment '=' in sequential logic process
+                                                          : ... Suggest using delayed assignment '<='
+   84 |                 Shift2[i] = Shift2[i - 1];
+      |                       ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_s1.v:90:23: Blocking assignment '=' in sequential logic process
+                                                          : ... Suggest using delayed assignment '<='
+   90 |                 Shift3[i] = Shift3[i - 1];
+      |                       ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_s1.v:96:23: Blocking assignment '=' in sequential logic process
+                                                          : ... Suggest using delayed assignment '<='
+   96 |                 Shift4[i] = Shift4[i - 1];
+      |                       ^
+%Warning-COMBDLY: /openlane/designs/canny/src/s1.v:194:19: Non-blocking assignment '<=' in combinational logic process
+                                                         : ... This will be executed as a blocking assignment '='!
+  194 |             new_x <= (~x) + 1;
+      |                   ^~
+                  *** See https://verilator.org/warn/COMBDLY before disabling this,
+                  else you may end up with different sim results.
+%Warning-COMBDLY: /openlane/designs/canny/src/s1.v:195:19: Non-blocking assignment '<=' in combinational logic process
+                                                         : ... This will be executed as a blocking assignment '='!
+  195 |             new_y <= (~y) + 1;
+      |                   ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/s1.v:198:19: Non-blocking assignment '<=' in combinational logic process
+                                                         : ... This will be executed as a blocking assignment '='!
+  198 |             new_x <= x;
+      |                   ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/s1.v:199:19: Non-blocking assignment '<=' in combinational logic process
+                                                         : ... This will be executed as a blocking assignment '='!
+  199 |             new_y <= y;
+      |                   ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/s1.v:209:27: Non-blocking assignment '<=' in combinational logic process
+                                                         : ... This will be executed as a blocking assignment '='!
+  209 |         if(ang26<0) angle <= 2'd0;
+      |                           ^~
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_nm1.v:52:19: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   52 |             Shift1[i] = 20'd0;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_nm1.v:55:19: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   55 |             Shift2[i] = 20'd0;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_nm1.v:58:22: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   58 |             Shift_ang[i] = 2'd0;
+      |                      ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_nm1.v:66:23: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   66 |                 Shift1[i] = Shift1[i - 1];
+      |                       ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_nm1.v:71:23: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   71 |                 Shift2[i] = Shift2[i - 1];
+      |                       ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_nm1.v:76:26: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   76 |                 Shift_ang[i] = Shift_ang[i - 1];
+      |                          ^
+%Warning-COMBDLY: /openlane/designs/canny/src/nmh1.v:72:17: Non-blocking assignment '<=' in combinational logic process
+                                                          : ... This will be executed as a blocking assignment '='!
+   72 |               a <= s2[0];
+      |                 ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/nmh1.v:73:17: Non-blocking assignment '<=' in combinational logic process
+                                                          : ... This will be executed as a blocking assignment '='!
+   73 |               b <= s2[2];
+      |                 ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/nmh1.v:76:17: Non-blocking assignment '<=' in combinational logic process
+                                                          : ... This will be executed as a blocking assignment '='!
+   76 |               a <= s1[2];
+      |                 ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/nmh1.v:77:17: Non-blocking assignment '<=' in combinational logic process
+                                                          : ... This will be executed as a blocking assignment '='!
+   77 |               b <= s3[0];
+      |                 ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/nmh1.v:80:17: Non-blocking assignment '<=' in combinational logic process
+                                                          : ... This will be executed as a blocking assignment '='!
+   80 |               a <= s1[1];
+      |                 ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/nmh1.v:81:17: Non-blocking assignment '<=' in combinational logic process
+                                                          : ... This will be executed as a blocking assignment '='!
+   81 |               b <= s3[1];
+      |                 ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/nmh1.v:84:17: Non-blocking assignment '<=' in combinational logic process
+                                                          : ... This will be executed as a blocking assignment '='!
+   84 |               a <= s1[0];
+      |                 ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/nmh1.v:85:17: Non-blocking assignment '<=' in combinational logic process
+                                                          : ... This will be executed as a blocking assignment '='!
+   85 |               b <= s3[2];
+      |                 ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/nmh1.v:88:17: Non-blocking assignment '<=' in combinational logic process
+                                                          : ... This will be executed as a blocking assignment '='!
+   88 |               a <= 0;
+      |                 ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/nmh1.v:89:17: Non-blocking assignment '<=' in combinational logic process
+                                                          : ... This will be executed as a blocking assignment '='!
+   89 |               b <= 0;
+      |                 ^~
+%Warning-COMBDLY: /openlane/designs/canny/src/nmh1.v:100:26: Non-blocking assignment '<=' in combinational logic process
+                                                           : ... This will be executed as a blocking assignment '='!
+  100 |             0 : out_data <= 3'b001;
+      |                          ^~
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_el1.v:42:19: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   42 |         out_data1 = 3'b000;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_el1.v:43:19: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   43 |         out_data2 = 3'b000;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_el1.v:44:19: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   44 |         out_data3 = 3'b000;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_el1.v:47:19: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   47 |             Shift1[i] = 3'd0;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_el1.v:50:19: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   50 |             Shift2[i] = 3'd0;
+      |                   ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_el1.v:56:23: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   56 |             Shift1[0] = PixelData;
+      |                       ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_el1.v:58:23: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   58 |                 Shift1[i] = Shift1[i - 1];
+      |                       ^
+%Warning-BLKSEQ: /openlane/designs/canny/src/lb_el1.v:63:23: Blocking assignment '=' in sequential logic process
+                                                           : ... Suggest using delayed assignment '<='
+   63 |                 Shift2[i] = Shift2[i - 1];
+      |                       ^
+%Error-BLKANDNBLK: /openlane/designs/canny/src/Top module.v:44:29: Unsupported: Blocked and non-blocking assignments to same variable: 'canny_edge.out_data2_lb506'
+   44 | wire [2:0] out_data1_lb506, out_data2_lb506, out_data3_lb506;
+      |                             ^~~~~~~~~~~~~~~
+                   /openlane/designs/canny/src/lb_el1.v:43:19: ... Location of blocking assignment
+   43 |         out_data2 = 3'b000;
+      |                   ^
+                   /openlane/designs/canny/src/lb_el1.v:68:19: ... Location of nonblocking assignment
+   68 |         out_data2 <= Shift1[size-1];
+      |                   ^~
+%Error-BLKANDNBLK: /openlane/designs/canny/src/Top module.v:44:12: Unsupported: Blocked and non-blocking assignments to same variable: 'canny_edge.out_data1_lb506'
+   44 | wire [2:0] out_data1_lb506, out_data2_lb506, out_data3_lb506;
+      |            ^~~~~~~~~~~~~~~
+                   /openlane/designs/canny/src/lb_el1.v:42:19: ... Location of blocking assignment
+   42 |         out_data1 = 3'b000;
+      |                   ^
+                   /openlane/designs/canny/src/lb_el1.v:69:19: ... Location of nonblocking assignment
+   69 |         out_data1 <= Shift2[size-1];
+      |                   ^~
+%Error-BLKANDNBLK: /openlane/designs/canny/src/Top module.v:44:46: Unsupported: Blocked and non-blocking assignments to same variable: 'canny_edge.out_data3_lb506'
+   44 | wire [2:0] out_data1_lb506, out_data2_lb506, out_data3_lb506;
+      |                                              ^~~~~~~~~~~~~~~
+                   /openlane/designs/canny/src/lb_el1.v:44:19: ... Location of blocking assignment
+   44 |         out_data3 = 3'b000;
+      |                   ^
+                   /openlane/designs/canny/src/lb_el1.v:67:19: ... Location of nonblocking assignment
+   67 |         out_data3 <= PixelData;
+      |                   ^~
+%Error: Exiting due to 3 error(s)
